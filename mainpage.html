@@ -1,0 +1,45 @@
+<!doctype html>
+<html> 
+<head> 
+	<meta charset ="UTF-8">
+	<title> AJAX Call </title>
+</head>
+
+<body> 
+
+<script type ="template/handlebars" id="redditTemplate">
+
+	{{#each info}}
+		<div class="redditInfo">
+			<p> Score: {{data.score}} </p>
+			<p> Title: {{data.url}}</p>
+			<p> Comment Count: {{data.num_comments}} </p>
+			<p> Archived: {{data.archived}} </p>
+		</div>
+	{{else}}
+		<p> No Subreddit Found. </p>
+
+	{{/each}}	
+</script>
+
+<style> 
+	.redditInfo{
+		background: #ccddff;
+		border-bottom: 10px;
+	}
+</style>
+
+<h1> Subreddit Search </h1>
+
+	<input type="text" id="redditName" name="redditName">
+	<button onclick = "getSubreddits()"> Search </button>
+	
+	<div id = "emptyDiv"> </div>
+
+<script src = 'jquery-3.1.0.js'></script> 
+<script src = 'main.js'></script>
+<script src = 'handlebars-v4.0.5.js'></script>
+
+
+</body>
+</html>
